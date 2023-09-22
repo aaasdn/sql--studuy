@@ -1,5 +1,5 @@
 
--- lower(소문자), initcp(앞글자만 대문자), upper(대문자)
+-- lower(소문자), initcap(앞글자만 대문자), upper(대문자)
 
 SELECT * FROM dual;
 
@@ -82,6 +82,14 @@ SELECT first_name || last_name AS 이름, hire_date AS 입사일자
 
 FROM employees;
 
+SELECT
+    concat(first_name, last_name) AS 이름,
+    replace(hire_date, '/', '')   AS 입사일자
+FROM
+    employees
+ORDER BY
+    first_name;
+
 /*
 문제 2.
 EMPLOYEES 테이블에서 phone_number컬럼은 ###.###.####형태로 저장되어 있다
@@ -89,6 +97,7 @@ EMPLOYEES 테이블에서 phone_number컬럼은 ###.###.####형태로 저장되어 있다
 전화 번호를 출력하도록 쿼리를 작성하세요. (CONCAT, SUBSTR, LENGTH 사용)
 */
 SELECT
+    CONCAT('02',SUBSTR(phone_number,5)),
    CONCAT('(02)',SUBSTR(phone_number,5)) AS 전화번호
 FROM employees;
 
@@ -101,6 +110,18 @@ EMPLOYEES 테이블에서 JOB_ID가 it_prog인 사원의 이름(first_name)과 급여(salary)를
 조건 3) 급여는 전체 10자리로 출력하되 나머지 자리는 *로 출력합니다. 
 이 열의 열 별칭은 salary입니다.(힌트 : lpad 이용)
 */
+SELECT
+    first_name,
+    salary
+FROM employees
+where job_id='it_prog';
+
+SELECT
+job_id,
+RPAD(SUBSTR(first_name, 1, 3), LENGTH(first_name), '*') AS name,
+LPAD(salary, 10, '*') AS salary
+FROM employees
+WHERE LOWER(job_id) IN ('it_prog');
 
 
 
