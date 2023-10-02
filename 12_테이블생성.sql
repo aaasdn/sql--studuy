@@ -12,9 +12,9 @@
 
 ROLLBACK; 
 CREATE TABLE dept2 (
-    dept_no NUMBER(2),
+    dept_no NUMBER(3),
     dept_name VARCHAR2(14),
-    loca VARCHAR2(15),
+    loca VARCHAR2(16),
     dept_date DATE,
     dept_bonus NUMBER(10)
 );
@@ -24,7 +24,7 @@ SELECT * FROM dept2;
 
 -- NUMBER와 VARCHAR2 타입의 길이를 확인.
 INSERT INTO dept2
-VALUES(30, 'das', '경기', sysdate, 20000);
+VALUES(300, 'dasddddddddddd', '경기기기고', sysdate, 20000);
 
 -- 컬럼 추가
 ALTER TABLE dept2
@@ -55,7 +55,7 @@ SELECT * FROM dept3;
 -- 테이블 삭제 (구조는 남겨두고 내부 데이터만 모두 삭제)
 TRUNCATE TABLE dept3;
 
-DROP TABLE dept3;
+DROP TABLE dept2;
 
 ROLLBACK;
 
