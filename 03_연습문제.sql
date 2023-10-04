@@ -69,7 +69,7 @@ SELECT
 FROM employees
 WHERE job_id LIKE '%MAN';
 --15. 매니저(MAN) 직무에 해당하는 사원의 이름과 직무아이디를 직무아이디 순서대로 출력하세요.
-SELECT
+SELECT  
     first_name, job_id
 FROM employees
 WHERE job_id LIKE '%MAN'
