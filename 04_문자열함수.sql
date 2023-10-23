@@ -97,7 +97,7 @@ EMPLOYEES 테이블에서 phone_number컬럼은 ###.###.####형태로 저장되어 있다
 전화 번호를 출력하도록 쿼리를 작성하세요. (CONCAT, SUBSTR, LENGTH 사용)
 */
 SELECT
-    CONCAT('02',SUBSTR(phone_number,5)),
+    CONCAT('02',SUBSTR(phone_number,5)), -- 5 시작인덱스 
    CONCAT('(02)',SUBSTR(phone_number,5)) AS 전화번호
 FROM employees;
 
@@ -114,7 +114,7 @@ SELECT
     first_name,
     salary
 FROM employees
-where job_id='it_prog';
+WHERE job_id='it_prog';
 
 SELECT
 job_id,

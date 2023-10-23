@@ -44,11 +44,11 @@ FROM dual;
 
 -- NULL 형태를 변환하는 함수 NVL(컬럼, 변환할 티켓값)
 SELECT NULL FROM dual;
-SELECT NVL(NULL, 0) FROM dual;
+SELECT NVL(NULL, 1232) FROM dual;
 
 SELECT
     first_name,
-    NVL(commission_pct, 0) AS comm_pct
+    NVL(commission_pct, 2) AS comm_pct
 FROM employees;
 
 -- NULL 변환 함수 NVL2(컬럼, NULL이 아닐 경우의 값, NULL일 경우의 값)

@@ -14,7 +14,7 @@ BEGIN
     END LOOP;
 END;
 
-EXEC guguproc(14);
+EXEC guguproc(11);
 
 -- 매개값(인수) 없는 프로시저
 CREATE PROCEDURE p_test

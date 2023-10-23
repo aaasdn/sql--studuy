@@ -11,11 +11,11 @@ WHERE last_name = 'King';
 
 SELECT * 
 FROM employees
-WHERE department_id = 2050;
+WHERE department_id = 100;
 
 SELECT *
 FROM employees
-WHERE salary >= 15000
+WHERE salary >= 15000 
 AND salary < 20000;
 
 SELECT * FROM employees
@@ -90,10 +90,10 @@ WHERE salary >= 5000
 ORDER BY employee_id DESC;
 
 SELECT 
-    first_name,
+    first_name AS 이름,
     salary*12 AS pay
 FROM employees
-ORDER BY pay ASC;
+ORDER BY 이름 DESC;
 
 
 

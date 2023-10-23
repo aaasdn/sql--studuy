@@ -8,7 +8,8 @@ FROM employees;
 
 --3. 50번 부서 사원의 모든 정보를 출력하세요.
 SELECT * FROM employees
-WHERE department_id IN (50);
+WHERE department_id = 50;
+-- WHERE department_id IN (50);
 
 --4. 50번 부서 사원의 이름, 부서번호, 직무아이디를 출력하세요.
 SELECT first_name, employee_id, job_id
@@ -17,14 +18,18 @@ WHERE department_id = (50);
 
 --5. 모든 사원의 이름, 급여 그리고 300달러 인상된 급여를 출력하세요.
 -- SELECT first_name, salary
+SELECT first_name AS 이름, salary AS 급여, salary+300 AS 인상된급여
+FROM employees
+ORDER BY 인상된급여 ASC;
 
 --6. 급여가 10000보다 큰 사원의 이름과 급여를 출력하세요.
 SELECT first_name, salary 
 FROM employees
 WHERE salary > 10000;
+
 --7. 보너스를 받는 사원의 이름과 직무, 보너스율을 출력하세요.
 SELECT
-    first_name, job_id, commisiion_pct
+    first_name, job_id, commission_pct
 FROM employees
 WHERE commission_pct IS NOT NULL;
 
@@ -43,7 +48,7 @@ WHERE hire_date LIKE '03%';
 SELECT 
     first_name, salary
 FROM employees
-ORDER BY salary ASC;
+ORDER BY salary DESC;
 
 --11. 위 질의를 60번 부서의 사원에 대해서만 질의하세요. (컬럼: department_id)
 SELECT *
@@ -67,7 +72,8 @@ AND last_name = 'King';
 SELECT
     first_name, job_id
 FROM employees
-WHERE job_id LIKE '%MAN';
+WHERE job_id LIKE '___MAN%';
+
 --15. 매니저(MAN) 직무에 해당하는 사원의 이름과 직무아이디를 직무아이디 순서대로 출력하세요.
 SELECT  
     first_name, job_id
@@ -75,7 +81,13 @@ FROM employees
 WHERE job_id LIKE '%MAN'
 ORDER BY job_id;
 
+SELECT * FROM board
+WHERE title LIKE('질문')
+ORDER BY title;
 
+SELECT * FROM departments
+WHERE department_id like '%1%'
+ORDER BY department_id;
 
 
 

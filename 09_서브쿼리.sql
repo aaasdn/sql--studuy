@@ -49,7 +49,7 @@ WHERE salary > ANY /* == SOME */ (SELECT salary FROM employees
                 
 -- ALL: 값을 서브쿼리에 의해 리턴된 각각의 값과 모두 비교해서
 -- 모두 만족해야 합니다.
-  SELECT * FROM employees
+SELECT * FROM employees
 WHERE salary > ALL (SELECT salary FROM employees
                  WHERE first_name = 'David');              
                 
